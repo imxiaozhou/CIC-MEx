@@ -10,33 +10,35 @@ export interface MenuItem {
 export const menus: MenuItem[] = [
   {
     label: 'Login',
-    key: '/login',
+    key: '/login'
   },
   {
     label: 'Home',
-    key: '/home',
+    key: '/'
   },
   {
     label: 'MaterialExchange',
     key: '/material-exchange',
+    layout: 'content'
   },
   {
     label: 'Dashboard',
     key: '/dashboard',
+    layout: 'content'
   },
   {
     label: 'MyListings',
     key: '/my-listings',
+    layout: 'content'
   },
   {
     label: 'MyWatchlist',
     key: '/my-watchlist',
-    hidden: true,
+    layout: 'content'
   },
   {
     label: 'FAQs',
     key: '/faqs',
-    hidden: true,
     layout: 'content'
-  },
+  }
 ];

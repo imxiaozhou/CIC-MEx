@@ -19,21 +19,17 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
 
   return {
-    define: {
-      'process.env.VITE_SMA_APP_KEYCLOAK_URL': JSON.stringify(
-        process.env.VITE_SMA_APP_KEYCLOAK_URL
-      )
-    },
+    define: {},
     server: {
       port: 8000,
       // host: 127.0.1.1, //pnpm run dev --host 127.0.1.1
 
       proxy: {
-        '/sma-adm': {
-          target:
-            process.env.VITE_SMA_APP_BACKEND_URL || 'http://10.89.104.58:8000',
-          changeOrigin: true
-        }
+        // '/sma-adm': {
+        //   target:
+        //     process.env.VITE_SMA_APP_BACKEND_URL || 'http://10.89.104.58:8000',
+        //   changeOrigin: true
+        // }
       },
 
       open: false

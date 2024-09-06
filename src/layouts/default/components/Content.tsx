@@ -12,8 +12,11 @@ interface Props {
 export default function LayoutContent({ isContentLayout }: Readonly<Props>) {
   return (
     <Content
-      className="site-content"
-      style={isContentLayout ? { marginLeft: 12 } : {}}
+      style={{
+        flex: '1',
+        marginLeft: isContentLayout ? 12 : 0,
+        overflowY: 'auto'
+      }}
     >
       <ScrollBars>
         <Suspense fallback={<SkeletonNoSelected />}>

@@ -20,23 +20,16 @@ import skeletonSliceReducer from './reducer/skeletonSlice';
 
 import layoutSlice from './reducer/layoutSlice';
 
-
 const rootReducer = combineReducers({
   skeletonSliceReducer,
-  layout: persistReducer(
-    {
-      key: 'layout',
-      storage: storage
-    },
-    layoutSlice
-  ),
+  layout: layoutSlice
 });
 
 const persistConfig = {
   key: 'root',
   version: 1,
   storage: storage,
-  blacklist: [ 'layout']
+  blacklist: ['layout']
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

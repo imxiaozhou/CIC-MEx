@@ -34,9 +34,12 @@ i18n
   .init({
     // 初始化
     resources, // 本地多语言数据
-    fallbackLng: config.lang, // 默认当前环境的语言
+    lng: config.lang, // 默认当前环境的语言
     detection: {
       caches: ['localStorage', 'sessionStorage', 'cookie']
+    },
+    interpolation: {
+      escapeValue: false // React已经默认安全
     }
   });
 

@@ -1,29 +1,46 @@
-import {  Layout, theme } from 'antd';
-import Logo from './Logo';
+import { Button, Layout } from 'antd';
 const { Header } = Layout;
 
-interface Props {
-  isNewWindow: boolean;
-}
 export default function LayoutHeader() {
-  const {
-    token: { colorBgContainer, colorBorderSecondary }
-  } = theme.useToken();
+  const dispatch = useAppDispatch();
+
+  const handleChangelang = (lng: any) => {
+    dispatch(setLanguage(lng));
+  };
 
   return (
     <Header
       style={{
-        padding: '0 24px',
-        backgroundColor: colorBgContainer,
-        borderBottom: `1px solid ${colorBorderSecondary}`,
+        background: 'green',
+        height: '3vh',
         display: 'flex',
-        justifyContent: 'space-between',
-        position: 'sticky',
-        top: 0,
-        zIndex: 998
+        justifyContent: 'flex-end'
       }}
     >
-      <Logo />
+      <Button type="link" style={{ color: '#fff' }}>
+        {$t('Text')}
+      </Button>
+      <Button
+        type="link"
+        style={{ color: '#fff' }}
+        onClick={() => handleChangelang('hk')}
+      >
+        繁
+      </Button>
+      <Button
+        type="link"
+        style={{ color: '#fff' }}
+        onClick={() => handleChangelang('cn')}
+      >
+        简
+      </Button>
+      <Button
+        type="link"
+        style={{ color: '#fff' }}
+        onClick={() => handleChangelang('en')}
+      >
+        英
+      </Button>
     </Header>
   );
 }

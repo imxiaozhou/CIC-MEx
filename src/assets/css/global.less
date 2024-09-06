@@ -8,114 +8,8 @@
   text-align: center;
 }
 
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.ant-tag {
-  font-weight: bold;
-  padding: 2px 10px;
-}
-
-.hidden-cancel {
-  .ant-btn-default {
-    display: none;
-  }
-}
-
-.site-content {
-  display: flex;
-  flex-direction: column;
-  margin: 0 12px 16px 0;
-  border-radius: @border-radius-base;
-  // min-width: 720px
-}
-.site-menu {
-  background-color: transparent;
-  .ant-menu-item {
-    padding: 0 10px !important;
-    border-radius: 0px;
-    &:hover {
-      background-color: hsla(0, 0%, 80%, 0.671) !important;
-    }
-  }
-
-  .ant-menu-item-selected {
-    font-weight: bolder;
-  }
-
-  &,
-  .ant-menu-dark {
-    .ant-menu-item-selected {
-      color: @primary-color;
-      .ant-typography {
-        color: @primary-color;
-      }
-      svg {
-        path {
-          stroke: @primary-color !important;
-        }
-      }
-    }
-  }
-}
-.menu-collapsed,
-.ant-menu-inline-collapsed {
-  .ant-menu-item {
-    padding-inline: unset;
-  }
-}
-
-.inputAlign .ant-input-number-input-wrap .ant-input-number-input {
-  text-align: center;
-}
-
-.customProTableTitle {
-  padding: 16px 24px 0;
-  border-radius: 8px 8px 0 0;
-  border: 1px solid rgba(5, 5, 5, 0.06);
-  border-bottom: unset;
-}
-
-.customProTableBorderNo {
-  border: none;
-}
-
-.customProTableSearchTitle {
-  .ant-pro-table-search {
-    border-top: unset;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    .ant-pro-query-filter {
-      padding-top: 16px;
-    }
-  }
-}
 .border-radius {
   border-radius: @border-radius-base;
-}
-
-.drag-handle {
-  background-color: transparent;
-  transition: #ccc 0.2s;
-  opacity: 0;
-  width: 5px;
-  height: 100%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  cursor: col-resize;
-  z-index: 1;
-  &:hover {
-    background-color: transparent;
-    opacity: 1;
-    border-color: transparent;
-  }
-  &:focus-visible {
-    border-color: transparent;
-  }
 }
 
 .body-col-resize,
@@ -216,10 +110,6 @@ body,
   }
 }
 
-.colorWeak {
-  filter: invert(80%);
-}
-
 .ant-layout {
   height: 100vh;
 }
@@ -243,130 +133,6 @@ ol {
   list-style: none;
 }
 
-@media (max-width: 768px) {
-  .ant-table {
-    width: 100%;
-    overflow-x: auto;
-
-    &-thead > tr,
-    &-tbody > tr {
-      > th,
-      > td {
-        white-space: pre;
-
-        > span {
-          display: block;
-        }
-      }
-    }
-  }
-}
-
-.ant-layout-sider {
-  .ant-pro-sider-menu {
-    min-height: auto !important;
-
-    &.ant-menu-inline-collapsed {
-      svg {
-        position: relative !important;
-        top: -1px !important;
-        left: -4px !important;
-      }
-    }
-  }
-
-  .ant-layout-sider-children {
-    border-inline-end: none !important;
-    padding-inline: 0 !important;
-    min-width: 0 !important;
-  }
-
-  .ant-menu-item-selected {
-    background-color: #f3f8ff;
-  }
-}
-
-.notices-dropdown {
-  li:not(:last-child) .notices-item {
-    border-bottom: 1px solid #ddd;
-  }
-  .ant-dropdown-menu {
-    .ant-dropdown-menu-item {
-      padding: 10px 10px 0;
-    }
-  }
-}
-
-.notices-dropdown,
-.avatar-dropdown {
-  .ant-dropdown-menu {
-    .ant-dropdown-menu-item {
-      &:first-child {
-        &:hover {
-          background-color: transparent;
-          cursor: default;
-        }
-      }
-    }
-  }
-}
-
-.ant-layout-header {
-  .ant-pro-global-header-header-actions-avatar {
-    .avatar-box {
-      display: inline-flex;
-      > span {
-        &:last-child {
-          display: none;
-        }
-      }
-    }
-    & > div {
-      padding-inline: 5px;
-    }
-  }
-}
-
-.ant-message-notice-wrapper {
-  .ant-message-notice.ant-message-notice-success {
-    .ant-message-notice-content {
-      color: #fff !important;
-      background-color: #22a06b !important;
-
-      svg {
-        fill: #fff !important;
-      }
-    }
-  }
-}
-
-.light-theme-sidebar-bg .ant-menu-item-selected {
-  background: #d9eefb !important;
-}
-
-.dark-theme-sidebar-bg .ant-menu-item-selected {
-  background: #171717 !important;
-}
-
-.ant-input-affix-wrapper .ant-input-clear-icon,
-.anticon-close-circle {
-  svg {
-    font-size: 16px;
-  }
-}
-
-.ant-tag .anticon-close {
-  font-size: 12px;
-}
-
-.ant-typography ul {
-  margin-block: 0;
-  li {
-    margin-inline: 0;
-    padding-inline: 0;
-  }
-}
-
 // 全局滚动条样式
 ::-webkit-scrollbar {
   width: 7px;
@@ -382,12 +148,6 @@ ol {
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #b6b7b9;
-}
-
-.myApp {
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 65px);
 }
 
 // 富文本
@@ -524,48 +284,6 @@ ol {
   display: inline-flex;
 }
 
-.toolbar-item-text {
-  white-space: nowrap;
-}
-
-.toolbar-item-hover {
-  &:hover {
-    color: #333 !important;
-    background-color: #d9eefb !important;
-
-    svg {
-      width: 24px;
-      height: 24px;
-      fill: transparent;
-
-      path {
-        stroke: #333;
-      }
-
-      circle {
-        fill: #333;
-      }
-    }
-    .toolbar-item-text {
-      color: #333;
-    }
-  }
-}
-.toolbar-item-hover-no-svg {
-  &:hover {
-    color: #333 !important;
-    background-color: #d9eefb !important;
-  }
-}
-
-.my-desc-item .ant-descriptions-item-label::after {
-  display: none;
-}
-
-body .ant-layout.css-dev-only-do-not-override-ppoba1 {
-  overflow-x: clip;
-}
-
 .web-result-page {
   .ant-result-title {
     font-weight: 700;
@@ -574,76 +292,5 @@ body .ant-layout.css-dev-only-do-not-override-ppoba1 {
   .ant-result-subtitle {
     font-size: 20px;
     color: #171717;
-  }
-}
-.dark {
-  .ant-btn-link:not(:disabled):not(.ant-btn-disabled):hover {
-    color: @dark-button-hover-color;
-  }
-  .ant-btn-primary.ant-btn-background-ghost:not(:disabled):not(
-      .ant-btn-disabled
-    ):hover {
-    color: @dark-button-hover-color;
-    border-color: @dark-button-hover-color;
-  }
-}
-
-.email-toolbar {
-  display: flex;
-  align-items: center;
-  min-width: 1050px;
-  height: inherit;
-
-  .toolbar-item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-right: 8px;
-    padding: 3px 15px;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    cursor: pointer;
-    .anticon-redo {
-      margin-right: 5px;
-    }
-
-    .icon-unread {
-      margin-right: 3px;
-    }
-
-    .toolbar-checkbox {
-      &:hover {
-        color: #333;
-        background-color: #d9eefb;
-      }
-    }
-
-    &:first-child {
-      margin: 0 !important;
-    }
-
-    .ant-checkbox-wrapper {
-      margin-right: 0 !important;
-    }
-
-    .toolbar-item-icon {
-      margin-right: 5px;
-      font-size: 18px;
-    }
-
-    .email-unread {
-      position: absolute;
-      top: 0;
-      left: 14px;
-      width: 6px;
-      height: 6px;
-      background-color: #333;
-      border: 1px solid #fff;
-      border-radius: 6px;
-    }
-  }
-
-  .no-padding {
-    padding: 0;
   }
 }

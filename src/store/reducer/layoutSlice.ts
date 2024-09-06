@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '@/store';
 import config from '@/config';
 import { PURGE } from 'redux-persist';
+import i18n from '@/locales/index';
 
 export interface LayoutState {
   isDarkMode: boolean;
@@ -29,7 +30,7 @@ const initialState: LayoutState = {
   timezone: '+08:00',
   appearance: 'LIGHT',
   fontSize: 'MEDIUM',
-  language: localStorage.getItem('i18nextLng') ?? config.lang,
+  language: config.lang,
   // 默认服务器时区是东八区（测试环境其实是0时区）
   serviceTimezone: '+08:00',
 
@@ -61,6 +62,7 @@ export const layoutSlice = createSlice({
     },
     setLanguage: (state, action: PayloadAction<string>) => {
       state.language = action.payload;
+      i18n.changeLanguage(action.payload);
     },
     setAppearance: (state, action: PayloadAction<'LIGHT' | 'REALDARK'>) => {
       state.appearance = action.payload;
@@ -99,7 +101,6 @@ export const layoutSlice = createSlice({
       state.timezone = initialState.timezone;
       state.appearance = initialState.appearance;
       state.fontSize = initialState.fontSize;
-      state.language = initialState.language;
 
       state.siderWidth = initialState.siderWidth;
       state.isZoomInAndOut = initialState.isZoomInAndOut;

@@ -1,3 +1,3 @@
-import Login from '@/pages/login';
+import Home from '@/pages/home/index';
 
-export default Login;
+export default Home;
