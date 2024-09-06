@@ -10,4 +10,3 @@ export { default as CustomRadioGroup } from './CustomRadioGroup';
 export { default as ScrollBars } from './ScrollBars';
 export { default as SkeletonNoSelected } from './SkeletonNoSelected';
 export { default as UserAvatar } from './UserAvatar';
-export { default as CustomCertExpiredModal } from './CustomCertExpiredModal';

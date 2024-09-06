@@ -10,23 +10,19 @@ import 'antd/dist/reset.css';
 import './App.css';
 import './assets/css/global.less';
 
-const tokenLogger = (tokens: any) => {
-  localStorage.setItem('tokens', JSON.stringify(tokens));
-};
-
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <DarkModeConfigProvider>
-        <ThemeColorConfigProvider>
-            <App
-              message={{ maxCount: 1 }}
-              notification={{ maxCount: 1, placement: 'bottom' }}
-            >
-              <AdminApp />
-            </App>
-        </ThemeColorConfigProvider>
-      </DarkModeConfigProvider>
-    </PersistGate>
+    {/* <PersistGate loading={null} persistor={persistor}> */}
+    <DarkModeConfigProvider>
+      <ThemeColorConfigProvider>
+        <App
+          message={{ maxCount: 1 }}
+          notification={{ maxCount: 1, placement: 'bottom' }}
+        >
+          <AdminApp />
+        </App>
+      </ThemeColorConfigProvider>
+    </DarkModeConfigProvider>
+    {/* </PersistGate> */}
   </Provider>
 );
