@@ -1,0 +1,649 @@
+@import './base.less';
+
+.text-secondary {
+  color: @text-color-secondary;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ant-tag {
+  font-weight: bold;
+  padding: 2px 10px;
+}
+
+.hidden-cancel {
+  .ant-btn-default {
+    display: none;
+  }
+}
+
+.site-content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 12px 16px 0;
+  border-radius: @border-radius-base;
+  // min-width: 720px
+}
+.site-menu {
+  background-color: transparent;
+  .ant-menu-item {
+    padding: 0 10px !important;
+    border-radius: 0px;
+    &:hover {
+      background-color: hsla(0, 0%, 80%, 0.671) !important;
+    }
+  }
+
+  .ant-menu-item-selected {
+    font-weight: bolder;
+  }
+
+  &,
+  .ant-menu-dark {
+    .ant-menu-item-selected {
+      color: @primary-color;
+      .ant-typography {
+        color: @primary-color;
+      }
+      svg {
+        path {
+          stroke: @primary-color !important;
+        }
+      }
+    }
+  }
+}
+.menu-collapsed,
+.ant-menu-inline-collapsed {
+  .ant-menu-item {
+    padding-inline: unset;
+  }
+}
+
+.inputAlign .ant-input-number-input-wrap .ant-input-number-input {
+  text-align: center;
+}
+
+.customProTableTitle {
+  padding: 16px 24px 0;
+  border-radius: 8px 8px 0 0;
+  border: 1px solid rgba(5, 5, 5, 0.06);
+  border-bottom: unset;
+}
+
+.customProTableBorderNo {
+  border: none;
+}
+
+.customProTableSearchTitle {
+  .ant-pro-table-search {
+    border-top: unset;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    .ant-pro-query-filter {
+      padding-top: 16px;
+    }
+  }
+}
+.border-radius {
+  border-radius: @border-radius-base;
+}
+
+.drag-handle {
+  background-color: transparent;
+  transition: #ccc 0.2s;
+  opacity: 0;
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: col-resize;
+  z-index: 1;
+  &:hover {
+    background-color: transparent;
+    opacity: 1;
+    border-color: transparent;
+  }
+  &:focus-visible {
+    border-color: transparent;
+  }
+}
+
+.body-col-resize,
+.body-col-resize .emailListItem {
+  cursor: col-resize !important;
+}
+
+//禁用默认的鼠标行为
+.disable-text-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.ant-menu-root {
+  border-inline-end: none !important;
+}
+
+.ant-notification-notice {
+  border-radius: @border-radius-base;
+}
+
+.ant-notification-notice-success {
+  color: white;
+  background-color: @success-color;
+}
+
+.ant-notification-notice-error {
+  background-color: @error-color;
+}
+.ant-notification-notice-info {
+  background-color: @primary-color;
+}
+.ant-notification-notice-warning {
+  background-color: @warning-color;
+}
+
+.ant-notification-notice-icon,
+.ant-notification-notice-close {
+  color: white !important;
+}
+
+.ant-input-affix-wrapper .ant-input-clear-icon,
+.anticon-close,
+.ant-select-clear .anticon-close-circle {
+  font-size: 14px;
+}
+
+.ant-pro-table-list-toolbar-title {
+  font-weight: 600;
+}
+
+.ant-modal-title {
+  text-align: center;
+}
+
+.ant-descriptions-row {
+  .ant-form-item {
+    width: 100%;
+  }
+}
+h3.ant-typography,
+h4.ant-typography,
+h5.ant-typography {
+  margin-bottom: 0;
+}
+
+.ant-btn-text:not(:disabled):not(.ant-btn-disabled):hover {
+  background: #d9eefb;
+}
+
+// -------------------------
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  background-image: url('@/assets/img/background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  .ant-pro-layout {
+    height: 100%;
+    .ant-layout {
+      height: 100%;
+    }
+  }
+  .ant-input-clear-icon {
+    font-size: 16px;
+  }
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+.ant-layout {
+  height: 100vh;
+}
+
+.ant-pro-sider.ant-layout-sider.ant-pro-sider-fixed {
+  left: unset;
+}
+
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  .ant-table {
+    width: 100%;
+    overflow-x: auto;
+
+    &-thead > tr,
+    &-tbody > tr {
+      > th,
+      > td {
+        white-space: pre;
+
+        > span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.ant-layout-sider {
+  .ant-pro-sider-menu {
+    min-height: auto !important;
+
+    &.ant-menu-inline-collapsed {
+      svg {
+        position: relative !important;
+        top: -1px !important;
+        left: -4px !important;
+      }
+    }
+  }
+
+  .ant-layout-sider-children {
+    border-inline-end: none !important;
+    padding-inline: 0 !important;
+    min-width: 0 !important;
+  }
+
+  .ant-menu-item-selected {
+    background-color: #f3f8ff;
+  }
+}
+
+.notices-dropdown {
+  li:not(:last-child) .notices-item {
+    border-bottom: 1px solid #ddd;
+  }
+  .ant-dropdown-menu {
+    .ant-dropdown-menu-item {
+      padding: 10px 10px 0;
+    }
+  }
+}
+
+.notices-dropdown,
+.avatar-dropdown {
+  .ant-dropdown-menu {
+    .ant-dropdown-menu-item {
+      &:first-child {
+        &:hover {
+          background-color: transparent;
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+
+.ant-layout-header {
+  .ant-pro-global-header-header-actions-avatar {
+    .avatar-box {
+      display: inline-flex;
+      > span {
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+    & > div {
+      padding-inline: 5px;
+    }
+  }
+}
+
+.ant-message-notice-wrapper {
+  .ant-message-notice.ant-message-notice-success {
+    .ant-message-notice-content {
+      color: #fff !important;
+      background-color: #22a06b !important;
+
+      svg {
+        fill: #fff !important;
+      }
+    }
+  }
+}
+
+.light-theme-sidebar-bg .ant-menu-item-selected {
+  background: #d9eefb !important;
+}
+
+.dark-theme-sidebar-bg .ant-menu-item-selected {
+  background: #171717 !important;
+}
+
+.ant-input-affix-wrapper .ant-input-clear-icon,
+.anticon-close-circle {
+  svg {
+    font-size: 16px;
+  }
+}
+
+.ant-tag .anticon-close {
+  font-size: 12px;
+}
+
+.ant-typography ul {
+  margin-block: 0;
+  li {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+}
+
+// 全局滚动条样式
+::-webkit-scrollbar {
+  width: 7px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: #0000000d;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #9093994d;
+  border-radius: 4px;
+  box-shadow: inset 0 0 6px #0003;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b6b7b9;
+}
+
+.myApp {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 65px);
+}
+
+// 富文本
+.ck-content {
+  min-height: 300px;
+  ul,
+  ol {
+    margin-left: 40px;
+    list-style-position: outside;
+  }
+}
+.ck-powered-by {
+  display: none;
+}
+.ckeditor {
+  width: 100%;
+}
+
+.ck.ck-editor__top .ck-sticky-panel .ck-sticky-panel__content,
+.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+  border: none !important;
+}
+.ck.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable) {
+  border: none !important;
+  box-shadow: none !important;
+}
+.ck.ck-sticky-panel__placeholder {
+  display: none;
+}
+
+@color: rgba(255, 255, 255, 0.85);
+@bg-color: #141414;
+.ckeditor-dark {
+  .ck-reset_all *:not(.ck-reset_all-excluded *) {
+    color: @color !important;
+  }
+  .ck-editor__editable {
+    background: @bg-color !important;
+  }
+  .ck.ck-reset_all,
+  .ck-reset_all *:not(.ck-reset_all-excluded *) {
+    z-index: 100 !important;
+  }
+}
+
+.fontsize-middle {
+  .l-size {
+    font-size: 18px !important;
+  }
+  .m-size {
+    font-size: 16px !important;
+  }
+  .s-size {
+    font-size: 14px !important;
+  }
+}
+
+.fontsize-large {
+  .l-size {
+    font-size: 20px !important;
+  }
+  .m-size {
+    font-size: 18px !important;
+  }
+  .s-size {
+    font-size: 16px !important;
+  }
+}
+
+.fontsize-small {
+  .l-size {
+    font-size: 16px !important;
+  }
+  .m-size {
+    font-size: 14px !important;
+  }
+  .s-size {
+    font-size: 12px !important;
+  }
+}
+
+// 定义全局notification 的样式
+.ant-notification {
+  .ant-notification-notice-wrapper {
+    background: unset;
+    border-radius: 4px;
+    .ant-notification-notice-message {
+      color: white;
+    }
+    .ant-notification-notice-info {
+      background-color: @primary-color;
+    }
+    .ant-notification-notice-success {
+      background-color: @success-color;
+    }
+    .ant-notification-notice-error {
+      background-color: @error-color;
+      .ant-notification-notice-description {
+        color: #fff;
+      }
+    }
+    .ant-notification-notice-warning {
+      background-color: @warning-color;
+      .ant-notification-notice-content {
+        .ant-notification-notice-with-icon {
+          .ant-notification-notice-message {
+            color: #171717;
+          }
+        }
+      }
+    }
+  }
+}
+.custom-notification {
+  width: max-content !important;
+  padding: 0 !important;
+  border-radius: 4px;
+  .ant-notification-notice-content {
+    padding: 12px;
+
+    .ant-notification-notice-with-icon {
+      .ant-notification-notice-message {
+        margin-bottom: 0;
+        color: #fff;
+        font-weight: 700;
+        margin-inline-start: 36px;
+      }
+    }
+  }
+}
+
+// 修复全局 ProFormText  clear icon 上下不居中的样式问题
+.ant-input-affix-wrapper .ant-input-clear-icon {
+  display: inline-flex;
+}
+
+.toolbar-item-text {
+  white-space: nowrap;
+}
+
+.toolbar-item-hover {
+  &:hover {
+    color: #333 !important;
+    background-color: #d9eefb !important;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: transparent;
+
+      path {
+        stroke: #333;
+      }
+
+      circle {
+        fill: #333;
+      }
+    }
+    .toolbar-item-text {
+      color: #333;
+    }
+  }
+}
+.toolbar-item-hover-no-svg {
+  &:hover {
+    color: #333 !important;
+    background-color: #d9eefb !important;
+  }
+}
+
+.my-desc-item .ant-descriptions-item-label::after {
+  display: none;
+}
+
+body .ant-layout.css-dev-only-do-not-override-ppoba1 {
+  overflow-x: clip;
+}
+
+.web-result-page {
+  .ant-result-title {
+    font-weight: 700;
+    font-size: 32px;
+  }
+  .ant-result-subtitle {
+    font-size: 20px;
+    color: #171717;
+  }
+}
+.dark {
+  .ant-btn-link:not(:disabled):not(.ant-btn-disabled):hover {
+    color: @dark-button-hover-color;
+  }
+  .ant-btn-primary.ant-btn-background-ghost:not(:disabled):not(
+      .ant-btn-disabled
+    ):hover {
+    color: @dark-button-hover-color;
+    border-color: @dark-button-hover-color;
+  }
+}
+
+.email-toolbar {
+  display: flex;
+  align-items: center;
+  min-width: 1050px;
+  height: inherit;
+
+  .toolbar-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+    padding: 3px 15px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    .anticon-redo {
+      margin-right: 5px;
+    }
+
+    .icon-unread {
+      margin-right: 3px;
+    }
+
+    .toolbar-checkbox {
+      &:hover {
+        color: #333;
+        background-color: #d9eefb;
+      }
+    }
+
+    &:first-child {
+      margin: 0 !important;
+    }
+
+    .ant-checkbox-wrapper {
+      margin-right: 0 !important;
+    }
+
+    .toolbar-item-icon {
+      margin-right: 5px;
+      font-size: 18px;
+    }
+
+    .email-unread {
+      position: absolute;
+      top: 0;
+      left: 14px;
+      width: 6px;
+      height: 6px;
+      background-color: #333;
+      border: 1px solid #fff;
+      border-radius: 6px;
+    }
+  }
+
+  .no-padding {
+    padding: 0;
+  }
+}

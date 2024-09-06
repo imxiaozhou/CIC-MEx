@@ -1,0 +1,33 @@
+FROM node:21-slim AS base
+#FROM node:latest as base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+#RUN corepack enable
+COPY . /app
+WORKDIR /app
+
+FROM base AS prod-deps
+RUN npm config set proxy http://proxy.pccw.com:8080
+RUN npm config set https-proxy http://proxy.pccw.com:8080
+RUN  npm i pnpm -g
+RUN pnpm install 
+COPY . .
+RUN pnpm run build 
+
+# Fetching the latest nginx image
+FROM nginx
+
+# Set the timezone
+ENV TZ=Asia/Hong_Kong
+
+# Copying built assets from builder
+COPY --from=prod-deps /app/dist /usr/share/nginx/html
+
+# Copying our nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port 8000
+EXPOSE 8000
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
