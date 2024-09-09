@@ -11,7 +11,7 @@ const locales = i18n.store.data;
 
 function AdminApp() {
   const lang = useAppSelector(selectLanguage);
-  console.log(lang, 'lang');
+
   return (
     <ConfigProvider locale={locales[lang] as unknown as Locale}>
       <Suspense fallback={<Loading />}>

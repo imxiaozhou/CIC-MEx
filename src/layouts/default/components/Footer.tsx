@@ -2,12 +2,6 @@ import { Layout } from 'antd';
 const { Footer } = Layout;
 
 export default function LayoutHeader() {
-  const dispatch = useAppDispatch();
-
-  const handleChangelang = (lng: any) => {
-    dispatch(setLanguage(lng));
-  };
-
   return (
     <Footer
       style={{

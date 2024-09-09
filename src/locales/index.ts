@@ -34,21 +34,19 @@ i18n
   .init({
     // 初始化
     resources, // 本地多语言数据
-    lng: config.lang, // 默认当前环境的语言
+    fallbackLng: config.lang ?? 'en', // 默认当前环境的语言
     detection: {
       caches: ['localStorage', 'sessionStorage', 'cookie']
-    },
-    interpolation: {
-      escapeValue: false // React已经默认安全
     }
   });
 
 // --------这里是i18next-scanner新增的配置-------------
 export const $t = (key: string, params?: any[]): string => {
-  const hashKey = `K${crc32(key).toString(16)}`; // 将中文转换成crc32格式去匹配对应的json语言包
+  let k = key ?? '';
+  const hashKey = `K${crc32(k).toString(16)}`; // 将中文转换成crc32格式去匹配对应的json语言包
   let words = i18n.t(hashKey);
   if (words === hashKey) {
-    words = key;
+    words = k;
   }
 
   // 配置传递参数的场景, 目前仅支持数组

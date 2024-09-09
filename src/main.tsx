@@ -3,7 +3,6 @@ import { App } from 'antd';
 import AdminApp from './App';
 import { Provider } from 'react-redux';
 import { store, persistor } from '@/store';
-import { PersistGate } from 'redux-persist/integration/react';
 import { DarkModeConfigProvider } from '@/components/DarkModeSwitch';
 import { ThemeColorConfigProvider } from '@/components/ThemeColors';
 import 'antd/dist/reset.css';

@@ -1,8 +1,6 @@
-import React from 'react';
 import { Avatar, Button, Flex } from 'antd';
 import { useNavigate, useLocation } from 'react-router-dom';
 import NoticesDropdown from './HeaderActions/NoticeIcon';
-import Icon from '@/components/Icons';
 
 export default function LayoutHeader() {
   const navigate = useNavigate();
@@ -67,12 +65,16 @@ export default function LayoutHeader() {
       </div>
 
       {/* 右侧内容 */}
-      <Flex>
+      <Flex
+        justify="space-between"
+        align="center"
+        style={{ height: '10vh', display: 'flex', flexDirection: 'row' }}
+      >
         {isLogin ? (
-          <Flex>
+          <Flex style={{ marginRight: '8px' }}>
             <NoticesDropdown />
             <NoticesDropdown />
-            <Avatar size={32} icon="user" />
+            <Avatar size={32} icon="user" style={{ marginTop: '4px' }} />
           </Flex>
         ) : (
           <>
@@ -92,10 +94,7 @@ export default function LayoutHeader() {
             </Button>
           </>
         )}
-        <Button
-          type="primary"
-          style={{ marginRight: '8px', background: '#FF6617' }}
-        >
+        <Button type="primary" style={{ background: '#FF6617' }}>
           List Your Material
         </Button>
       </Flex>

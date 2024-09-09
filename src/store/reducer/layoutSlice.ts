@@ -30,7 +30,7 @@ const initialState: LayoutState = {
   timezone: '+08:00',
   appearance: 'LIGHT',
   fontSize: 'MEDIUM',
-  language: config.lang,
+  language: localStorage.getItem('i18nextLng') ?? config.lang,
   // 默认服务器时区是东八区（测试环境其实是0时区）
   serviceTimezone: '+08:00',
 

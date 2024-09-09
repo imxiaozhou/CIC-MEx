@@ -22,7 +22,13 @@ import layoutSlice from './reducer/layoutSlice';
 
 const rootReducer = combineReducers({
   skeletonSliceReducer,
-  layout: layoutSlice
+  layout: persistReducer(
+    {
+      key: 'layout',
+      storage: storage
+    },
+    layoutSlice
+  )
 });
 
 const persistConfig = {

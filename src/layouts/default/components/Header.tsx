@@ -3,7 +3,7 @@ const { Header } = Layout;
 
 export default function LayoutHeader() {
   const dispatch = useAppDispatch();
-
+  const $t = useTranslations();
   const handleChangelang = (lng: any) => {
     dispatch(setLanguage(lng));
   };
